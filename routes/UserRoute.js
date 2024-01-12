@@ -16,7 +16,7 @@ userRouter.delete("/:id", deleteSingleUser );
 userRouter.put("/:id", updateUser)
 
 
-module.express = {userRouter};
+module.exports = {userRouter};
 
 
 
