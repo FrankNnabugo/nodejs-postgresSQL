@@ -1,0 +1,26 @@
+services:
+
+postgre:
+ image: postgre:latest
+ container_name: User_postgre_DB
+ restart: always
+ ports: "3000:3000"
+ Environment:
+   - .env
+ username: ${USERNAME}
+ password: ${PASSWORD}
+ database: ${DATABASE}
+ 
+
+volumes:
+    C:\Users\ACER\Documents\postgres_data:/var/lib/postgresql/data
+ 
+
+
+Api:
+ container_name: user_management_app
+ restart: always
+ depends_on: postgre
+ ports: "4000:4000"
+ build: .
+
